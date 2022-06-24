@@ -74,7 +74,7 @@ namespace GamesTest.PresentationLayer.Controllers
             {
                 return BadRequest(ex.Message);
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 return Problem("Is something wrong");
             }
@@ -91,10 +91,53 @@ namespace GamesTest.PresentationLayer.Controllers
             {
                 newGame.GameGenres.Add(new GameGenreDTO() { GameId = gameId, GenreId = genreId });
             }
-            crudService.Add(newGame);
+            try
+            {
+                crudService.Update(newGame);
+                return Ok($"Game with id:{newGame.Id} updated");
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (Exception)
+            {
+                return Problem("Is something wrong");
+            }
 
-            return Ok();
         }
+        [HttpDelete("{id}")]
+        public IActionResult DeleteGame(int id)
+        {
+            try
+            {
+               crudService.Remove(id);
+                return Ok($"Game with id:{id} deleted");
+            }
+            catch (NullReferenceException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (Exception)
+            {
+                return Problem("Is something wrong");
+            }
 
+        }
+        /*
+        [HttpGet("{genreId}")]
+        public IEnumerable<GameViewModel> GetGameAllGamesOneGenre(int genreId)
+        {
+            try
+            {
+                return Ok(mapper.Map<GameDTO, GameViewModel>(crudService.GetOne(id)));
+            }
+            catch (NullReferenceException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
+        */
     }
 }

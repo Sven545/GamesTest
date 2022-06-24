@@ -60,7 +60,7 @@ namespace GamesTest.BusinessLogicLayer.Services
 
         public void Update(GameDTO newGame)
         {
-            throw new NotImplementedException();
+            gameRepository.Update(mapper.Map<GameDTO, Game>(newGame));
         }
     }
 }
