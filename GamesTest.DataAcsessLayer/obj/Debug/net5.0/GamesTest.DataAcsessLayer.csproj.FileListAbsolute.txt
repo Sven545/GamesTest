@@ -1,0 +1,12 @@
+C:\Users\DmiTrue\Desktop\MyTestProjects\GamesTest\GamesTest.DataAcsessLayer\bin\Debug\net5.0\GamesTest.DataAcsessLayer.deps.json
+C:\Users\DmiTrue\Desktop\MyTestProjects\GamesTest\GamesTest.DataAcsessLayer\bin\Debug\net5.0\GamesTest.DataAcsessLayer.dll
+C:\Users\DmiTrue\Desktop\MyTestProjects\GamesTest\GamesTest.DataAcsessLayer\bin\Debug\net5.0\GamesTest.DataAcsessLayer.pdb
+C:\Users\DmiTrue\Desktop\MyTestProjects\GamesTest\GamesTest.DataAcsessLayer\obj\Debug\net5.0\GamesTest.DataAcsessLayer.csproj.AssemblyReference.cache
+C:\Users\DmiTrue\Desktop\MyTestProjects\GamesTest\GamesTest.DataAcsessLayer\obj\Debug\net5.0\GamesTest.DataAcsessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DmiTrue\Desktop\MyTestProjects\GamesTest\GamesTest.DataAcsessLayer\obj\Debug\net5.0\GamesTest.DataAcsessLayer.AssemblyInfoInputs.cache
+C:\Users\DmiTrue\Desktop\MyTestProjects\GamesTest\GamesTest.DataAcsessLayer\obj\Debug\net5.0\GamesTest.DataAcsessLayer.AssemblyInfo.cs
+C:\Users\DmiTrue\Desktop\MyTestProjects\GamesTest\GamesTest.DataAcsessLayer\obj\Debug\net5.0\GamesTest.DataAcsessLayer.csproj.CoreCompileInputs.cache
+C:\Users\DmiTrue\Desktop\MyTestProjects\GamesTest\GamesTest.DataAcsessLayer\obj\Debug\net5.0\GamesTest.DataAcsessLayer.dll
+C:\Users\DmiTrue\Desktop\MyTestProjects\GamesTest\GamesTest.DataAcsessLayer\obj\Debug\net5.0\refint\GamesTest.DataAcsessLayer.dll
+C:\Users\DmiTrue\Desktop\MyTestProjects\GamesTest\GamesTest.DataAcsessLayer\obj\Debug\net5.0\GamesTest.DataAcsessLayer.pdb
+C:\Users\DmiTrue\Desktop\MyTestProjects\GamesTest\GamesTest.DataAcsessLayer\obj\Debug\net5.0\ref\GamesTest.DataAcsessLayer.dll

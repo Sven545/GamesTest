@@ -1,0 +1,15 @@
+C:\Users\DmiTrue\Desktop\MyTestProjects\GamesTest\GamesTest.BusinessLogicLayer\bin\Debug\net5.0\GamesTest.BusinessLogicLayer.deps.json
+C:\Users\DmiTrue\Desktop\MyTestProjects\GamesTest\GamesTest.BusinessLogicLayer\bin\Debug\net5.0\GamesTest.BusinessLogicLayer.dll
+C:\Users\DmiTrue\Desktop\MyTestProjects\GamesTest\GamesTest.BusinessLogicLayer\bin\Debug\net5.0\GamesTest.BusinessLogicLayer.pdb
+C:\Users\DmiTrue\Desktop\MyTestProjects\GamesTest\GamesTest.BusinessLogicLayer\bin\Debug\net5.0\GamesTest.DataAcsessLayer.dll
+C:\Users\DmiTrue\Desktop\MyTestProjects\GamesTest\GamesTest.BusinessLogicLayer\bin\Debug\net5.0\GamesTest.DataAcsessLayer.pdb
+C:\Users\DmiTrue\Desktop\MyTestProjects\GamesTest\GamesTest.BusinessLogicLayer\obj\Debug\net5.0\GamesTest.BusinessLogicLayer.csproj.AssemblyReference.cache
+C:\Users\DmiTrue\Desktop\MyTestProjects\GamesTest\GamesTest.BusinessLogicLayer\obj\Debug\net5.0\GamesTest.BusinessLogicLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DmiTrue\Desktop\MyTestProjects\GamesTest\GamesTest.BusinessLogicLayer\obj\Debug\net5.0\GamesTest.BusinessLogicLayer.AssemblyInfoInputs.cache
+C:\Users\DmiTrue\Desktop\MyTestProjects\GamesTest\GamesTest.BusinessLogicLayer\obj\Debug\net5.0\GamesTest.BusinessLogicLayer.AssemblyInfo.cs
+C:\Users\DmiTrue\Desktop\MyTestProjects\GamesTest\GamesTest.BusinessLogicLayer\obj\Debug\net5.0\GamesTest.BusinessLogicLayer.csproj.CoreCompileInputs.cache
+C:\Users\DmiTrue\Desktop\MyTestProjects\GamesTest\GamesTest.BusinessLogicLayer\obj\Debug\net5.0\GamesTest.BusinessLogicLayer.csproj.CopyComplete
+C:\Users\DmiTrue\Desktop\MyTestProjects\GamesTest\GamesTest.BusinessLogicLayer\obj\Debug\net5.0\GamesTest.BusinessLogicLayer.dll
+C:\Users\DmiTrue\Desktop\MyTestProjects\GamesTest\GamesTest.BusinessLogicLayer\obj\Debug\net5.0\refint\GamesTest.BusinessLogicLayer.dll
+C:\Users\DmiTrue\Desktop\MyTestProjects\GamesTest\GamesTest.BusinessLogicLayer\obj\Debug\net5.0\GamesTest.BusinessLogicLayer.pdb
+C:\Users\DmiTrue\Desktop\MyTestProjects\GamesTest\GamesTest.BusinessLogicLayer\obj\Debug\net5.0\ref\GamesTest.BusinessLogicLayer.dll

@@ -22,5 +22,6 @@ namespace GamesTest.PresentationLayer
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
     }
 }
