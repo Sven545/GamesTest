@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using GamesTest.PresentationLayer.ViewModels;
 using GamesTest.BusinessLogicLayer.Interfaces;
 using AutoMapper;
-//using GamesTest.DataAcsessLayer.Entities;
 using Ninject;
 using GamesTest.BusinessLogicLayer.Services;
 using System;
 using GamesTest.BusinessLogicLayer.DataTransferObjects;
+using System.Linq;
 
 namespace GamesTest.PresentationLayer.Controllers
 {
@@ -28,18 +28,32 @@ namespace GamesTest.PresentationLayer.Controllers
             {
                 cfg.CreateMap<GameDTO, GameViewModel>().ForMember(p=>p.Genres,opt=>opt.MapFrom(p=>p.GameGenres));
                 cfg.CreateMap<DeveloperDTO, DeveloperViewModel>();
-                cfg.CreateMap<GameGenreDTO, GenreViewModel>().ForMember(p => p.Name, opt => opt.MapFrom(p => p.Genre.Name));
+                cfg.CreateMap<GameGenreDTO, GenreViewModel>()
+                .ForMember(p => p.Name, opt => opt.MapFrom(p => p.Genre.Name))
+                .ForMember(p => p.Id, opt => opt.MapFrom(p => p.Genre.Id));
+                
             });
             mapper = new Mapper(config);
         }
 
         [HttpGet]
-        public IEnumerable<GameViewModel> Get()
+        public IActionResult Get()
         {
-            var test1 = crudService.GetAll();
+            try
+            {                
+                var allGames = mapper.Map<IEnumerable<GameDTO>, IEnumerable<GameViewModel>>(crudService.GetAll()).ToList();
+                if (allGames.Count > 0)
+                {
+                    return Ok(allGames);
+                }
+                else return NoContent();
+            }
+            catch (Exception)
+            {
+                return Problem();
+            }
+          
            
-            var test2= mapper.Map<IEnumerable<GameDTO>, IEnumerable<GameViewModel>>(test1);
-            return mapper.Map<IEnumerable<GameDTO>, IEnumerable<GameViewModel>>(test1);
         }
         
         [HttpGet("{id}")]
@@ -49,9 +63,13 @@ namespace GamesTest.PresentationLayer.Controllers
             {
                 return Ok(mapper.Map<GameDTO, GameViewModel>(crudService.GetOne(id)));
             }
-            catch(NullReferenceException ex)
+            catch(ArgumentException)
             {
-                return BadRequest(ex.Message);
+                return NoContent();
+            }
+            catch(Exception)
+            {
+                return Problem();
             }
           
         }
@@ -85,25 +103,28 @@ namespace GamesTest.PresentationLayer.Controllers
         [HttpPut("{gameId},{gameName},{developerId}")]
         public IActionResult ChangeGame(int gameId, string gameName, int developerId, IEnumerable<int> genreIds)
         {
-
-            GameDTO newGame = new GameDTO() { Id = gameId, Name = gameName, DeveloperId = developerId };
-            foreach (var genreId in genreIds)
-            {
-                newGame.GameGenres.Add(new GameGenreDTO() { GameId = gameId, GenreId = genreId });
-            }
-            try
-            {
-                crudService.Update(newGame);
-                return Ok($"Game with id:{newGame.Id} updated");
-            }
-            catch (ArgumentException ex)
-            {
-                return BadRequest(ex.Message);
-            }
-            catch (Exception)
-            {
-                return Problem("Is something wrong");
-            }
+          
+                GameDTO newGame = new GameDTO() { Id = gameId, Name = gameName, DeveloperId = developerId };
+                foreach (var genreId in genreIds)
+                {
+                    newGame.GameGenres.Add(new GameGenreDTO() { GameId = gameId, GenreId = genreId });
+                }
+                try
+                {
+                    crudService.Update(newGame);
+                    return Ok($"Game with id:{newGame.Id} updated");
+                }
+                catch (ArgumentException ex)
+                {
+                    return BadRequest(ex.Message);
+                }
+                catch (Exception)
+                {
+                    return Problem("Is something wrong");
+                }
+            
+            
+            
 
         }
         [HttpDelete("{id}")]
@@ -114,7 +135,7 @@ namespace GamesTest.PresentationLayer.Controllers
                crudService.Remove(id);
                 return Ok($"Game with id:{id} deleted");
             }
-            catch (NullReferenceException ex)
+            catch (ArgumentException ex)
             {
                 return BadRequest(ex.Message);
             }

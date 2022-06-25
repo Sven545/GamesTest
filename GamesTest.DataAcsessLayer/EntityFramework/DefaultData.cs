@@ -88,11 +88,11 @@ namespace GamesTest.DataAcsessLayer.EntityFramework
         private static GameGenre game10Genre2 = new GameGenre() { GameId = 10, GenreId = 3 };
         private static GameGenre game10Genre3 = new GameGenre() { GameId = 10, GenreId = 12 };
 
-
+        /*
         private static Developer developer = new Developer() { Id = 1, Name = "testDev" };
         private static Game game1 = new Game() { Id = 1, Name = "game1", DeveloperId = 1 };
         private static Game game2 = new Game() { Id = 2, Name = "game2", DeveloperId = 1 };
-
+        */
 
         public static readonly List<Developer> Developers = new List<Developer>
     {
