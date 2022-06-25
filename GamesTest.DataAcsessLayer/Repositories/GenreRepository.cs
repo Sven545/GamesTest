@@ -2,11 +2,8 @@
 using GamesTest.DataAcsessLayer.EntityFramework;
 using GamesTest.DataAcsessLayer.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GamesTest.DataAcsessLayer.Repositories
 {
@@ -16,8 +13,6 @@ namespace GamesTest.DataAcsessLayer.Repositories
         public GenreRepository(DataBaseContext dbContext)
         {
             this.dbContext = dbContext;
-
-
         }
         public void Add(Genre newGenre)
         {
@@ -27,7 +22,6 @@ namespace GamesTest.DataAcsessLayer.Repositories
 
         public IEnumerable<Genre> GetAll()
         {
-            var test= dbContext.Genres.Include(p => p.GameGenres).ThenInclude(p => p.Game).ToList();
             return dbContext.Genres.Include(p=>p.GameGenres).ThenInclude(p=>p.Game).ToList();
         }
 
@@ -41,13 +35,6 @@ namespace GamesTest.DataAcsessLayer.Repositories
             dbContext.Genres.Remove(genre);
             dbContext.SaveChanges();
         }
-        /*
-        public void Update(T newEntity)
-        {
-            dbContext.Genres.Remove(newEntity as Genre);
-            dbContext.Genres.Add(newEntity as Genre);
-            dbContext.SaveChanges();
-        }
-        */
+        
     }
 }

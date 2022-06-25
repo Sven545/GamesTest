@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GamesTest.BusinessLogicLayer.DataTransferObjects
+﻿namespace GamesTest.BusinessLogicLayer.DataTransferObjects
 {
     public class GameGenreDTO
     {

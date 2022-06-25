@@ -7,7 +7,6 @@ using Ninject;
 using GamesTest.BusinessLogicLayer.Services;
 using System;
 using GamesTest.BusinessLogicLayer.DataTransferObjects;
-using System.Linq;
 
 namespace GamesTest.PresentationLayer.Controllers
 {
@@ -36,6 +35,7 @@ namespace GamesTest.PresentationLayer.Controllers
             mapper = new Mapper(config);
 
         }
+
         [HttpGet]
         public IActionResult GetAllGenres()
         {
@@ -49,8 +49,7 @@ namespace GamesTest.PresentationLayer.Controllers
             {
                 return Problem();
             }
-           
-           
+
         }
     }
 }

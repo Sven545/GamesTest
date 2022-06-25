@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using GamesTest.DataAcsessLayer.Interfaces;
 using GamesTest.DataAcsessLayer.Entities;
 using Ninject;
@@ -38,7 +36,7 @@ namespace GamesTest.BusinessLogicLayer.Services
             });
             mapper = new Mapper(config);
         }
-       
+
         public void Add(GameDTO newGameDTO)
         {
             Game gameFromDb;
@@ -59,14 +57,12 @@ namespace GamesTest.BusinessLogicLayer.Services
 
         public IEnumerable<GameDTO> GetAll()
         {
-           // var test= mapper.Map<IEnumerable<Game>, IEnumerable<GameDTO>>(gameRepository.GetAll());
             return mapper.Map<IEnumerable<Game>, IEnumerable<GameDTO>>(gameRepository.GetAll());
         }
 
         public GameDTO GetOne(int id)
         {
             Game gameFromDb;
-            //var gameFromDb = gameRepository.GetOne(id);
             if (DbContainsGame(id, out gameFromDb))
             {
                 return mapper.Map<Game, GameDTO>(gameFromDb);
@@ -90,7 +86,6 @@ namespace GamesTest.BusinessLogicLayer.Services
         {
             Game gameFromDb;
             Game newGame = mapper.Map<GameDTO, Game>(newGameDTO);
-            // var newGame = newEntity as Game;
             if (DbContainsGame(newGame.Id, out gameFromDb) == true)
             {
                 if (GameModelIsValid(newGame))
@@ -103,8 +98,6 @@ namespace GamesTest.BusinessLogicLayer.Services
             {
                 throw new ArgumentException($"Game with id:{newGame.Id} not found");
             }
-
-            // gameRepository.Update(mapper.Map<GameDTO, Game>(newGame));
         }
 
         private List<int> ConvertGameGenresListToGenreIdsList(List<GameGenre> gameGenres)

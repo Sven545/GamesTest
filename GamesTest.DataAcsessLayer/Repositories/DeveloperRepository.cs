@@ -2,11 +2,8 @@
 using GamesTest.DataAcsessLayer.EntityFramework;
 using GamesTest.DataAcsessLayer.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GamesTest.DataAcsessLayer.Repositories
 {
@@ -17,6 +14,7 @@ namespace GamesTest.DataAcsessLayer.Repositories
         {
             this.dbContext = dbContext;
         }
+
         public void Add(Developer newDeveloper)
         {
             dbContext.Developers.Add(newDeveloper);
@@ -38,13 +36,6 @@ namespace GamesTest.DataAcsessLayer.Repositories
             dbContext.Developers.Remove(developer);
             dbContext.SaveChanges();
         }
-        /*
-        public void Update(T newEntity)
-        {
-            dbContext.Developers.Remove(newEntity as Developer);
-            dbContext.Developers.Add(newEntity as Developer);
-            dbContext.SaveChanges();
-        }
-        */
+       
     }
 }

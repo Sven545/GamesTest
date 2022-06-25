@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GamesTest.DataAcsessLayer.Entities;
+﻿using System.Collections.Generic;
 using GamesTest.BusinessLogicLayer.DataTransferObjects;
 
 namespace GamesTest.BusinessLogicLayer.Interfaces

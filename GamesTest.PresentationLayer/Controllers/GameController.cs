@@ -52,8 +52,7 @@ namespace GamesTest.PresentationLayer.Controllers
             {
                 return Problem();
             }
-          
-           
+
         }
         
         [HttpGet("{id}")]
@@ -96,14 +95,12 @@ namespace GamesTest.PresentationLayer.Controllers
             {
                 return Problem("Is something wrong");
             }
-           
-            
-            
+ 
         }
+
         [HttpPut("{gameId},{gameName},{developerId}")]
         public IActionResult ChangeGame(int gameId, string gameName, int developerId, IEnumerable<int> genreIds)
-        {
-          
+        {        
                 GameDTO newGame = new GameDTO() { Id = gameId, Name = gameName, DeveloperId = developerId };
                 foreach (var genreId in genreIds)
                 {
@@ -122,11 +119,8 @@ namespace GamesTest.PresentationLayer.Controllers
                 {
                     return Problem("Is something wrong");
                 }
-            
-            
-            
-
         }
+
         [HttpDelete("{id}")]
         public IActionResult DeleteGame(int id)
         {
@@ -145,20 +139,6 @@ namespace GamesTest.PresentationLayer.Controllers
             }
 
         }
-        /*
-        [HttpGet("{genreId}")]
-        public IEnumerable<GameViewModel> GetGameAllGamesOneGenre(int genreId)
-        {
-            try
-            {
-                return Ok(mapper.Map<GameDTO, GameViewModel>(crudService.GetOne(id)));
-            }
-            catch (NullReferenceException ex)
-            {
-                return BadRequest(ex.Message);
-            }
-
-        }
-        */
+       
     }
 }

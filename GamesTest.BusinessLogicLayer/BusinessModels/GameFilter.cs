@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using GamesTest.BusinessLogicLayer.DataTransferObjects;
 using GamesTest.BusinessLogicLayer.Interfaces;
-using GamesTest.BusinessLogicLayer.Services;
 using GamesTest.DataAcsessLayer.Entities;
 using GamesTest.DataAcsessLayer.Interfaces;
 using GamesTest.DataAcsessLayer.Repositories;
@@ -16,9 +12,9 @@ namespace GamesTest.BusinessLogicLayer.BusinessModels
 {
     public class GameFilter : IGameFilterService
     {
-        // private ICrudGameService crudService;
         private IGameRepository gameRepository;
         private Mapper mapper;
+
         public GameFilter()
         {
             IKernel ninjectKernel = new StandardKernel();
@@ -34,7 +30,6 @@ namespace GamesTest.BusinessLogicLayer.BusinessModels
 
             });
             mapper = new Mapper(config);
-
         }
 
         public IEnumerable<GameDTO> GetAllGamesOfGenre(int genreId)

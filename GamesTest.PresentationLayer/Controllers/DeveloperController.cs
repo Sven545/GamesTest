@@ -7,7 +7,6 @@ using Ninject;
 using GamesTest.BusinessLogicLayer.Services;
 using System;
 using GamesTest.BusinessLogicLayer.DataTransferObjects;
-using System.Linq;
 
 namespace GamesTest.PresentationLayer.Controllers
 {
@@ -25,13 +24,11 @@ namespace GamesTest.PresentationLayer.Controllers
 
             var config = new MapperConfiguration(cfg =>
             {
-               // cfg.CreateMap<GameDTO, GameViewModel>().ForMember(p => p.Genres, opt => opt.MapFrom(p => p.GameGenres));
-                //cfg.CreateMap<GenreDTO, GenreViewModel>();
                 cfg.CreateMap<DeveloperDTO, DeveloperViewModel>();
-               // cfg.CreateMap<GameGenreDTO, GenreViewModel>().ForMember(p => p.Name, opt => opt.MapFrom(p => p.Genre.Name));
             });
             mapper = new Mapper(config);
         }
+
         [HttpGet]
         public IActionResult GetAllDevelopers()
         {
@@ -45,8 +42,6 @@ namespace GamesTest.PresentationLayer.Controllers
             {
                 return Problem();
             }
-
-
         }
     }
 }
